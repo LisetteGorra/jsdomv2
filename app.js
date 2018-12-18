@@ -1,38 +1,12 @@
-var titles = document.getElementsByClassName('item');
-// console.log(Array.isArray(titles));
+const wmf = document.querySelector('#book-list li:nth-child(2) .name');
+console.log(wmf);
 
+var books = document.querySelector('#book-list li .name');
+console.log(books);
 
-Array.from(titles).forEach(function(item){
-//     console.log(item);
-// });
+books = document.querySelectorAll('#book-list li .name');
+console.log(books);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// const wmf = document.querySelector('#book-list li:nth-child(2) .name');
-// console.log(wmf);
-
-// var books = document.querySelector('#book-list li .name');
-// console.log(books);
-
-// books = document.querySelectorAll('#book-list li .name');
-// console.log(books);
-
-// Array.from(books).forEach(function(book){
-//   console.log(book);
-// });
+Array.from(books).forEach(function(book){
+  console.log(book);
+});
