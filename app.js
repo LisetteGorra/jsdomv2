@@ -1,15 +1,13 @@
-const bookList = document.querySelector('#book-list');
-
-console.log('#book-list next sibling:', bookList.nextSibling);
-console.log('#book-list next element sibling:', bookList.nextElementSibling);
-
-console.log('#book-list previous sibling:', bookList.previousSibling);
-console.log('#book-list previous element sibling:', bookList.previousElementSibling);
-
-bookList.previousElementSibling.querySelector('p').innerHTML +='<br />Too cool for everyone else!';
+const list = document.querySelector('#book-list ul');
 
 
-
+//delete books
+list.addEventListener('click', function(e){
+   if(e.target.className == 'delete'){
+       const li = e.target.parentElement;  
+       list.removeChild(li); 
+   }
+});
 
 
 
@@ -17,11 +15,25 @@ bookList.previousElementSibling.querySelector('p').innerHTML +='<br />Too cool f
 
 
 
-// const bookList = document.querySelector('#book-list');
 
-// console.log('#book-list next sibling:', bookList.nextSibling);
-// console.log('#book-list next element sibling:', bookList.nextElementSibling);
-// console.log('#book-list previous sibling:', bookList.previousSibling);
-// console.log('#book-list previous element sibling:', bookList.previousElementSibling);
 
-// bookList.previousElementSibling.querySelector('p').innerHTML += '<br />Too cool for everyone else!';
+
+
+
+
+
+
+
+
+
+
+
+// const list = document.querySelector('#book-list ul');
+
+// // delete books
+// list.addEventListener('click', (e) => {
+//   if(e.target.className == 'delete'){
+//     const li = e.target.parentElement;
+//     li.parentNode.removeChild(li);
+//   }
+// });
