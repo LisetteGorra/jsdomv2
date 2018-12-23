@@ -34,29 +34,42 @@ addForm.addEventListener('submit', function(e){
   list.appendChild(li);
 });
 
-//hide books
+// hide books
 const hideBox = document.querySelector('#hide');
 hideBox.addEventListener('change', function(e){
   if(hideBox.checked){
     list.style.display = "none";
-  }
-  else {
+  } else {
     list.style.display = "initial";
   }
 });
 
-//filter books
-
-const searchBar = document.forms['search-books'].querySelector('input');
-searchBar.addEventListener('keyup', function(e){ 
+// filter books
+const searchBar = forms['search-books'].querySelector('input');
+searchBar.addEventListener('keyup', (e) => {
   const term = e.target.value.toLowerCase();
   const books = list.getElementsByTagName('li');
-  Array.from(books).forEach(function(book){
+  Array.from(books).forEach((book) => {
     const title = book.firstElementChild.textContent;
-    if(title.toLowerCase().indexOf(term) != -1){
+    if(title.toLowerCase().indexOf(e.target.value) != -1){
       book.style.display = 'block';
-    } else{
+    } else {
       book.style.display = 'none';
     }
-  })
+  });
+});
+
+//tabbed content
+const tabs = document.querySelector( '.tabs');
+const panels = document.querySelectorAll('.panel');
+tabs.addEventListener('click', function(e){
+  if(e.target.tagName == "LI"){
+    const targetPanel =  document.querySelector(e.target.dataset.target);
+    panels.forEach(function(panel){
+      if(panel == targetPanel){
+        panel.classList.add('active');
+        panel.classList.remove('active');
+      }
+    });
+  }
 })
