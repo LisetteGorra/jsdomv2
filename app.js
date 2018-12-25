@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
   // add books
   const addForm = forms['add-book'];
-  addForm.addEventListener('submit', function(e){
+  addForm.addEventListener('submit', function(e){ 
     e.preventDefault();
 
     // create elements
